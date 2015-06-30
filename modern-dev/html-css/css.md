@@ -223,6 +223,52 @@ element {
 
 ## Floats and Positioning
 
+### Floats
+
+Floats enable items to be stacked horizontally (i.e. two items stacked in a row). Each subsequent item's position is determined by the previous item's position, allowing for interesting layouts similar to those in magazine articles where an image is embedded into the text of the article.
+
+There are 4 possible values for the CSS float property:
+
+- **left** - the element will float to the left side of its containing block
+- **right** - the element will float to the right side of its containing block
+- **none** - the element will not have any float associated with it
+- **inherit** - the element will inherit the float property of its parent element
+
+### Clearing Floats
+
+It's common to need to remove a float property once it has been set on an element or a parent element. There are several ways to accomplish this: the empty div method, the default method, the overflow method and the clearfix method. Of these, the default and clearfix methods are the most widely recommended.
+
+**The Empty Div Method**
+
+This method consists of simply putting an empty `<div>` element after the float element, and assigning the clear property a value of 'both'.
+
+**The Default Method**
+
+The default way to clear a float is to simply apply the `clear: both` property to the subsequent element on the page. However, this is not always possible and is why additional clearing methods exist.
+
+**The Overflow Method**
+
+ This method requires the overflow property of the parent element to be set to `auto` or `hidden`. this will force the parent element to expand and encompass the floating element, and thus any subsequent elements will not have a float property.
+
+ **The Clearfix Method**
+
+ When this method is used on a parent element, child elements will self-clear. This is a very robust way to clear, and accounts for older browsers.
+
+ ```css
+ .group:before,
+ .group:after {
+ 	content: "";
+ 	display: table;
+ }
+ .group:after {
+ 	clear: both;
+ }
+ .group {
+ 	zoom: 1; /* IE6&7 support */
+ }
+
+### Positioning
+
 
 
 - Units of measure
@@ -232,4 +278,3 @@ element {
 	- px
 - Modify DOM elements (i.e. text)
 - Browser prefixes
-- Floats / Positioning
