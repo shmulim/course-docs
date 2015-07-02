@@ -269,6 +269,32 @@ The default way to clear a float is to simply apply the `clear: both` property t
 
 ### Positioning
 
+The `position` property has four possible values: static, relative, absolute and fixed. 
+
+Static positioning is considered the default position property value for elements on the page. Any time an element is given a property other than static, it is considered a "positioned element." Positioned elements allow for the use of the `top`, `right`, `bottom` and `left` CSS properties.
+
+The `relative` value allows use of the directional properties to render an element relative to its normal static position. An example of this would be a superscript.
+
+```html
+<div>
+	<p>X<sup>2</sup></p>
+</div>
+
+<style>
+sup {
+	position: relative;
+	top: -0.5em;
+}
+</style>
+```
+
+In the above example, the 2 would be rendered slightly above the X.
+
+The `absolute` value allows the element to be manually placed anywhere on the page outside of the traditional document flow. The directional properties above are used to accomplish this. 
+
+Absolute elements that are not within a positioned elements are positioned in relation to the browswer window. In order to keep an absolute positioned element within the confines of its parent element, the parent element needs to have a position of `relative`.
+
+Fixed position elements will stay in a specific position relative to the window, regardless of scrolling. This property value is always scoped in relation to the window, and cannot have its position scoped in relation to a parent element.
 
 
 - Units of measure
