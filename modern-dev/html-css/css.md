@@ -266,6 +266,7 @@ The default way to clear a float is to simply apply the `clear: both` property t
  .group {
  	zoom: 1; /* IE6&7 support */
  }
+ ```
 
 ### Positioning
 
@@ -296,11 +297,87 @@ Absolute elements that are not within a positioned elements are positioned in re
 
 Fixed position elements will stay in a specific position relative to the window, regardless of scrolling. This property value is always scoped in relation to the window, and cannot have its position scoped in relation to a parent element.
 
+## CSS Units of Measure
 
-- Units of measure
-	- em
-	- rem
-	- percentage
-	- px
-- Modify DOM elements (i.e. text)
-- Browser prefixes
+### px
+
+Pixels are the most commonly used length on the web. Contrary to what most believe, the pixels are not the "device pixels", as this measurement does not have anything to do with the actual pixels on the device display.
+
+Instead, this is an [angular measurement](http://inamidst.com/stuff/notes/csspx) which computes the width of an object relative to the the device resolution.
+
+Pixels are an absolute measurement, meaning that the values are strict. A `<div>` element that is set to 400 pixels wide will always show as 400 pixels wide, and does not adjust relative to any device width.
+
+Additional absolute measurement units are:
+
+- **in** - inches
+	- 1 in = 96 px
+- **cm** - centimeters
+	- 1 cm = 37.8 px
+- **mm** - millimeters
+	- 1 mm = 3.78 px
+
+### em
+
+The em is a relative unit of measurement based on `font-size`. Em units multiply upon themselves when being applied to the `font-size` property. this means that if an element is set to 1.5 em [within another element that is already](http://codepen.io/chriscoyier/pen/HizKe) 1.5 em, then the `font-size` would be calculated as:
+
+```
+first element em * second element em
+1.5 X 1.5 = 2.25 x 16 px = 36 px
+
+1 em == 16 px
+```
+
+### rem
+
+Another relative unit, but it is always set relative to the "root" element rather than cascading like em. The root element values can be set on the `<html>` element.
+
+Other relative units of measure include:
+
+- points
+- pica
+- ex
+- ch
+
+### percentage
+
+The percentage length is set based on the length of the same property for the parent element.
+
+```css
+.container {
+	width: 500px;
+}
+
+div {
+	width: 50%;
+}
+```
+
+In the above example, if there is a `<div>` element contained within the container, then the width of that `<div>` will be 250px (50% of 500px).
+
+## Browser Prefixes
+
+CSS browswer (vendor) prefixes are a way for browsers to add additional and experiemental CSS functionality that may not be part of a formal specification or a specification that hasn't been finalized. 
+
+In many cases, these prefixes are temporary (e.g. border-radius), as the new functionality will eventually become fully supported in the CSS specification and valid across all browsers. However, sometimes the prefixes are necessary to also support older versions of browsers that may never support the functionality (looking at you, IE...).
+
+The different browswer prefixes:
+
+- **Android / Chrome / Safari** - `-webkit-`
+- **Firefox** - `-moz-`
+- **Internet Explorer** - `-ms-`
+- **Opera** - `-o-`
+
+Example using broswer prefixes:
+
+```css
+-webkit-transition: all 4s ease;
+-moz-transition: all 4s ease;
+-ms-transition: all 4s ease;
+-o-transition: all 4s ease;
+transition: all 4s ease;
+```
+
+It's important to not assume that the syntax for a vendor prefix is exactly the same across supported version. Occasionally older versions of a browser will require different syntax (i.e. the CSS gradient property in older versions of Chrome / Safari).
+
+[This website](http://shouldiprefix.com/) will show which features require a browser prefix and which ones do not. Additionally, if CSS preprocessors are being used, it's usually possible to automatically add vendor prefixes to the CSS files during the build process.
+
