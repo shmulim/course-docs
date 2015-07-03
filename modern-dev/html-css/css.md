@@ -1,5 +1,4 @@
-[Selectors](#selectors) | [Borders](#borders) | [Box Model](#box-model)
-[Floats & Positioning](#floats-and-positioning) | [Units of Measure](#css-units-of-measure) | [Browser Prefixes](#browser-prefixes)
+[Selectors](#selectors) | [Borders](#borders) | [Box Model](#box-model) | [Floats & Positioning](#floats-and-positioning) | [Units of Measure](#css-units-of-measure) | [Browser Prefixes](#browser-prefixes)
 
 ## CSS Basic Syntax
 
