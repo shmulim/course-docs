@@ -1,3 +1,5 @@
+[HTML 5 Syntax](#html5-syntax) | [HTML 5 Forms](#html5-forms)
+
 ## HTML Basic Syntax
 
 Basic HTML site:

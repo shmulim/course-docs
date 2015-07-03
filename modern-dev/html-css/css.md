@@ -1,3 +1,6 @@
+[Selectors](#selectors) | [Borders](#borders) | [Box Model](#box-model)
+[Floats & Positioning](#floats-and-positioning) | [Units of Measure](#css-units-of-measure) | [Browser Prefixes](#browser-prefixes)
+
 ## CSS Basic Syntax
 
 Basic CSS syntax follows this pattern:
@@ -10,7 +13,7 @@ selector {
 
 ### Selectors
 
-CSS selectors target HTML tags to apply styling. An example of a very simple selector is:
+[CSS selectors](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started/Selectors) target HTML tags to apply styling. An example of a very simple selector is:
 
 ```css
 p {
@@ -18,7 +21,7 @@ p {
 }
 ```
 
-CSS classes can be selected using the period (`.`) before the name of the class in the stylesheet. Similarly, IDs can be selected using the hash symbol (`#`).
+[CSS classes can be selected](https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors) using the period (`.`) before the name of the class in the stylesheet. Similarly, IDs can be selected using the hash symbol (`#`).
 
 ```css
 .container {
@@ -34,7 +37,7 @@ Note that the order in which selectors are used within the stylesheet is importa
 
 #### Descendant Selectors
 
-Descendant selectors will only select tags that are children of the parent tag.
+[Descendant selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_selectors) will only select tags that are children of the parent tag.
 
 ```css
 parent-tag child-tag {
@@ -90,7 +93,7 @@ In this example, all `<p>` elements that follow `<ul>` elements would be selecte
 
 ### Pseudo-Classes
 
-Pseudo-selectors are a modifier of selectors that will only modify a tag when certain conditions are met / have occurred.
+[Pseudo-selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes) are a modifier of selectors that will only modify a tag when certain conditions are met / have occurred.
 
 ```css
 selector:action {
@@ -120,7 +123,7 @@ a:hover {
 
 ### Attribute Selectors
 
-A CSS attribute selector can be used to select all HTML elements on a page that possess a specified HTML attribute.
+A [CSS attribute selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) can be used to select all HTML elements on a page that possess a specified HTML attribute.
 
 ```css
 element[attribute] {
@@ -143,7 +146,7 @@ There are several additional helper operators that assist in making more specifi
 
 ## Borders
 
-CSS borders can be applied using the `border` property. It's also possible to use separate and more specific border properties.
+[CSS borders](https://developer.mozilla.org/en-US/docs/Web/CSS/border) can be applied using the `border` property. It's also possible to use separate and more specific border properties.
 
 ```css
 
@@ -184,24 +187,9 @@ div {
 
 ## Box Model
 
-The box model is the method by which HTML elements are constructed and CSS uses to manipulate the size and spacing of elements.
+[The box model](https://developer.mozilla.org/en-US/docs/Web/CSS/box_model) is the method by which HTML elements are constructed and CSS uses to manipulate the size and spacing of elements.
 
-..............................................
-:                                            :
-:    ------------------------------------    :
-:(1) |                                  |    :
-:    |          Element Content         |    :
-:   (2)                                 |    :
-:    |                                  |    :
-:    |  (3)                             |    :
-:    |                                  |    :
-:    ------------------------------------    :
-:                                            :
-:.............................................
-
-- 1 = Margin
-- 2 = Border
-- 3 = Padding
+![CSS Box Model](img/boxdim.png)
 
 Margin and padding can be manipulated on each side. In order to center a block element on the page, it's possible to use `margin-left: auto` and `margin-right: auto`.
 
@@ -225,7 +213,7 @@ element {
 
 ### Floats
 
-Floats enable items to be stacked horizontally (i.e. two items stacked in a row). Each subsequent item's position is determined by the previous item's position, allowing for interesting layouts similar to those in magazine articles where an image is embedded into the text of the article.
+[Floats](https://developer.mozilla.org/en-US/docs/Web/CSS/float) enable items to be stacked horizontally (i.e. two items stacked in a row). Each subsequent item's position is determined by the previous item's position, allowing for interesting layouts similar to those in magazine articles where an image is embedded into the text of the article.
 
 There are 4 possible values for the CSS float property:
 
@@ -244,7 +232,7 @@ This method consists of simply putting an empty `<div>` element after the float 
 
 **The Default Method**
 
-The default way to clear a float is to simply apply the `clear: both` property to the subsequent element on the page. However, this is not always possible and is why additional clearing methods exist.
+The default way to [clear a float](https://developer.mozilla.org/en-US/docs/Web/CSS/clear) is to simply apply the `clear: both` property to the subsequent element on the page. However, this is not always possible and is why additional clearing methods exist.
 
 **The Overflow Method**
 
@@ -270,7 +258,7 @@ The default way to clear a float is to simply apply the `clear: both` property t
 
 ### Positioning
 
-The `position` property has four possible values: static, relative, absolute and fixed. 
+[The `position` property](https://developer.mozilla.org/en-US/docs/Web/CSS/position) has four possible values: static, relative, absolute and fixed. 
 
 Static positioning is considered the default position property value for elements on the page. Any time an element is given a property other than static, it is considered a "positioned element." Positioned elements allow for the use of the `top`, `right`, `bottom` and `left` CSS properties.
 
@@ -301,7 +289,7 @@ Fixed position elements will stay in a specific position relative to the window,
 
 ### px
 
-Pixels are the most commonly used length on the web. Contrary to what most believe, the pixels are not the "device pixels", as this measurement does not have anything to do with the actual pixels on the device display.
+[Pixels](https://developer.mozilla.org/en-US/docs/Web/CSS/length) are the most commonly used length on the web. Contrary to what most believe, the pixels are not the "device pixels", as this measurement does not have anything to do with the actual pixels on the device display.
 
 Instead, this is an [angular measurement](http://inamidst.com/stuff/notes/csspx) which computes the width of an object relative to the the device resolution.
 
@@ -318,7 +306,7 @@ Additional absolute measurement units are:
 
 ### em
 
-The em is a relative unit of measurement based on `font-size`. Em units multiply upon themselves when being applied to the `font-size` property. this means that if an element is set to 1.5 em [within another element that is already](http://codepen.io/chriscoyier/pen/HizKe) 1.5 em, then the `font-size` would be calculated as:
+[The em](https://developer.mozilla.org/en-US/docs/Web/CSS/length) is a relative unit of measurement based on `font-size`. Em units multiply upon themselves when being applied to the `font-size` property. this means that if an element is set to 1.5 em [within another element that is already](http://codepen.io/chriscoyier/pen/HizKe) 1.5 em, then the `font-size` would be calculated as:
 
 ```
 first element em * second element em
@@ -329,7 +317,7 @@ first element em * second element em
 
 ### rem
 
-Another relative unit, but it is always set relative to the "root" element rather than cascading like em. The root element values can be set on the `<html>` element.
+[Another relative unit](https://developer.mozilla.org/en-US/docs/Web/CSS/length), but it is always set relative to the "root" element rather than cascading like em. The root element values can be set on the `<html>` element.
 
 Other relative units of measure include:
 
@@ -340,7 +328,7 @@ Other relative units of measure include:
 
 ### percentage
 
-The percentage length is set based on the length of the same property for the parent element.
+[The percentage length](https://developer.mozilla.org/en-US/docs/Web/CSS/percentage) is set based on the length of the same property for the parent element.
 
 ```css
 .container {
@@ -356,7 +344,7 @@ In the above example, if there is a `<div>` element contained within the contain
 
 ## Browser Prefixes
 
-CSS browswer (vendor) prefixes are a way for browsers to add additional and experiemental CSS functionality that may not be part of a formal specification or a specification that hasn't been finalized. 
+[CSS browser (vendor) prefixes](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix) are a way for browsers to add additional and experiemental CSS functionality that may not be part of a formal specification or a specification that hasn't been finalized. 
 
 In many cases, these prefixes are temporary (e.g. border-radius), as the new functionality will eventually become fully supported in the CSS specification and valid across all browsers. However, sometimes the prefixes are necessary to also support older versions of browsers that may never support the functionality (looking at you, IE...).
 
